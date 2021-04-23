@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/screens/news_detail_screen.dart.dart';
 
 import '../model/news_model.dart';
 
@@ -16,7 +17,7 @@ class GlobalNewsTile extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-              flex: 2,
+              flex: 3,
               child: Image.network(
                 item.imageUrl,
                 fit: BoxFit.cover,
@@ -33,20 +34,22 @@ class GlobalNewsTile extends StatelessWidget {
             height: 10,
           ),
           Expanded(
-            flex: 1,
-            child: Text(
-              item.title,
-              style: TextStyle(
-                color: Color(0xFFFFDB58),
-                fontWeight: FontWeight.w900,
-                fontSize: 30,
+            flex: 2,
+            child: SingleChildScrollView(
+              child: Text(
+                item.title,
+                style: TextStyle(
+                  color: Color(0xFFFFDB58),
+                  fontWeight: FontWeight.w900,
+                  fontSize: 30,
+                ),
               ),
             ),
           ),
           TextButton(
             onPressed: () {
-              // TODO: navigate to the page to see full description
-              //
+              Navigator.pushNamed(context, NewsDetailScreen.routeName,
+                  arguments: item);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

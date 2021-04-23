@@ -2,10 +2,10 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/model/newsProvider.dart';
 import 'package:newsapp/screens/global_news_screen.dart';
+import 'package:newsapp/screens/logoutScreen.dart';
+import 'package:newsapp/screens/trending_screen.dart';
 import 'package:provider/provider.dart';
 import 'categories_screen.dart';
-import 'news_screen.dart';
-import 'profile_screen.dart';
 
 class FrontScreen extends StatefulWidget {
   static const routeName = '/front';
@@ -17,10 +17,9 @@ class _FrontScreenState extends State<FrontScreen> {
   int currentIndex = 0;
   final List<Widget> items = [
     GlobalNewsScreen(),
-    NewsScreen(),
     CategoryScreen(),
-    NewsScreen(),
-    ProfileScreen()
+    TrendingScreen(),
+    Logout()
   ];
   void changePage(index) {
     setState(() {
@@ -59,17 +58,6 @@ class _FrontScreenState extends State<FrontScreen> {
                   ),
                   title: Text("Home")),
               BubbleBottomBarItem(
-                  backgroundColor: Colors.deepPurple,
-                  icon: Icon(
-                    Icons.bookmark,
-                    color: Colors.black,
-                  ),
-                  activeIcon: Icon(
-                    Icons.favorite,
-                    color: Colors.deepPurple,
-                  ),
-                  title: Text("Bookmarks")),
-              BubbleBottomBarItem(
                   backgroundColor: Colors.green,
                   icon: Icon(
                     Icons.menu,
@@ -92,16 +80,16 @@ class _FrontScreenState extends State<FrontScreen> {
                   ),
                   title: Text("Trending")),
               BubbleBottomBarItem(
-                  backgroundColor: Colors.indigo,
+                  backgroundColor: Colors.orange,
                   icon: Icon(
-                    Icons.supervised_user_circle_sharp,
+                    Icons.logout,
                     color: Colors.black,
                   ),
                   activeIcon: Icon(
-                    Icons.verified_user,
-                    color: Colors.indigo,
+                    Icons.logout,
+                    color: Colors.orange,
                   ),
-                  title: Text("Profile")),
+                  title: Text("LogOut")),
             ],
             opacity: .2,
           )),

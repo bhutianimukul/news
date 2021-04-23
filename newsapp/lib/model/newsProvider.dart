@@ -10,14 +10,17 @@ class NewsProvider with ChangeNotifier {
     return [..._items];
   }
 
-  Future<void> fetchCategoryData() async {
-    final url =
-        'https://newsapi.org/v2/top-headlines?country=in&apiKey=13f96319dae94b739e554e8dad8d676a';
+  Future<void> fetchNewsData(final url) async {
+    _items.clear();
+
     final response = await http.get(Uri.parse(url));
     final jsonData = json.decode(response.body);
     if (jsonData['status'] == 'ok') {
       jsonData['articles'].forEach((element) {
-        if (element['urlToImage'] != null && element["url"] != null) {
+        if (element['urlToImage'] != null &&
+            element["url"] != null &&
+            element["title"] != null &&
+            element["description"] != null) {
           _items.add(NewsModel(
               author: element["author"],
               publishedAt: DateTime.parse(element['publishedAt']),
@@ -29,7 +32,7 @@ class NewsProvider with ChangeNotifier {
       });
     }
 
-    print(items.length);
     notifyListeners();
+    print(items.length);
   }
 }

@@ -3,14 +3,15 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:newsapp/model/newsProvider.dart';
 import 'package:newsapp/model/news_model.dart';
 import 'package:provider/provider.dart';
+
 import '../widgets/swap_card.dart';
 
-class GlobalNewsScreen extends StatefulWidget {
+class TrendingScreen extends StatefulWidget {
   @override
-  _GlobalNewsScreenState createState() => _GlobalNewsScreenState();
+  _TrendingScreenState createState() => _TrendingScreenState();
 }
 
-class _GlobalNewsScreenState extends State<GlobalNewsScreen> {
+class _TrendingScreenState extends State<TrendingScreen> {
   var isLoading = false;
   List<NewsModel> items = [];
 
@@ -27,10 +28,10 @@ class _GlobalNewsScreenState extends State<GlobalNewsScreen> {
       isLoading = true;
     });
     await news.fetchNewsData(
-        'https://newsapi.org/v2/top-headlines?country=in&from=2021-04-23&to=2020-04-23&pageSize=100&sortBy=publishedAt&apiKey=13f96319dae94b739e554e8dad8d676a');
+        'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=13f96319dae94b739e554e8dad8d676a');
     items = news.items;
     setState(() {
-      isLoading = false;
+      isLoading = false;  
     });
   }
 
@@ -40,7 +41,7 @@ class _GlobalNewsScreenState extends State<GlobalNewsScreen> {
       inAsyncCall: isLoading,
       child: SwapCard(
         items: items,
-        title: 'INDIA\'S DAILY',
+        title: 'Trending Daily',
       ),
     );
   }
