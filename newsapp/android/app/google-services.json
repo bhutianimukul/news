@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "77618464583",
+    "project_id": "news-fbfa5",
+    "storage_bucket": "news-fbfa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77618464583:android:6df3070cf025e71484ae62",
+        "android_client_info": {
+          "package_name": "com.example.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77618464583-426mpafdn2mg15sbtb3tp0op44sano26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXl8YG-MUlmIY4V0SA-2WjMvs5CPG6Wpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77618464583-426mpafdn2mg15sbtb3tp0op44sano26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
