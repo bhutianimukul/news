@@ -27,7 +27,7 @@ class _GlobalNewsScreenState extends State<GlobalNewsScreen> {
       isLoading = true;
     });
     await news.fetchNewsData(
-        'https://newsapi.org/v2/top-headlines?country=in&from=2021-04-23&to=2020-04-23&pageSize=100&sortBy=publishedAt&apiKey=13f96319dae94b739e554e8dad8d676a');
+        'https://newsapi.org/v2/top-headlines?country=in&pageSize=100&sortBy=publishedAt&apiKey=13f96319dae94b739e554e8dad8d676a');
     items = news.items;
     setState(() {
       isLoading = false;
