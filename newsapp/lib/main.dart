@@ -36,18 +36,7 @@ class _MyAppState extends State<MyApp> {
     return ChangeNotifierProvider(
       create: (_) => NewsProvider(),
       child: MaterialApp(routes: {
-        Business.routeName: (_) => Business(),
         Items.routeName: (_) => Items(),
-        Tesla.routeName: (_) => Tesla(),
-        Apple.routeName: (_) => Apple(),
-        GlobalNews.routeName: (_) => GlobalNews(),
-        Technology.routeName: (_) => Technology(),
-        Journal.routeName: (_) => Journal(),
-        Sports.routeName: (_) => Sports(),
-        Health.routeName: (_) => Health(),
-        Science.routeName: (_) => Science(),
-        Entertainment.routeName: (_) => Entertainment(),
-        Bitcoin.routeName: (_) => Bitcoin(),
         FrontScreen.routeName: (_) => FrontScreen(),
         NewsDetailScreen.routeName: (_) => NewsDetailScreen(),
         LoginScreen.routeName: (_) => LoginScreen(),
